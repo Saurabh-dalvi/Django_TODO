@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<style>
+    p {text-align: center;}
+    a {text-align: center;}
+
+	body{
+		background-color: #708090;
+	}
+
+	input{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+
+	input::placeholder {
+	  color: #EE1A3C;
+	}
+
+	.submit{
+		background-color: #B0C4DE;
+	}
+
+	.center-column{
+		width:600px;
+		margin: 20px auto;
+		padding:20px;
+		background-color: #F8F8FF;
+		border-radius: 3px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+	}
+
+	.item-row{
+		background-color: #6B8E23;
+		margin: 10px;
+		padding: 20px;
+		border-radius: 3px;
+		color: #F0FFFF;
+		font-size: 16px;
+		box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+	}
+
+	.btn-danger{
+		background-color: #ffae19;
+		border-color: #e59400;
+	}
+
+</style>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Are you sure you want to delete "{{item}}"?</p>
+
+
+<div class="center-column">
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input type="submit" name="Confirm" value="Confirm">
+        <a href="{% url 'list' %}"><button type="button">Cancel</button></a>
+    </form>
+</div>
+
+</body>
+</html>
